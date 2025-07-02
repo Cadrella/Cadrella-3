@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #field_and_catalogs{
+            width: 50vw;
+            height: 50vh;
+            display: grid;
+            grid-template-columns: 100%;
+            background-color: lightgreen;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+        .field{
+            background-color: aliceblue;
+            height: 50px;
+        }
+        .catalogs{
+            display: grid;
+            background-color: lightgoldenrodyellow;
+            grid-template-columns: 50% 50%;
+        }
+        .catalog{
+            display: flex;
+            background-color: aqua;
+            height: 50px;
+        }
+        .catalog_image{
+            flex: 0.5;
+            background-color: aquamarine;
+        }
+        .catalog_name{
+            flex: 0.5;
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="field_and_catalogs">
+        <div class="field"></div>
+        <div class="catalogs">
+            <section class="catalog">
+                <div class="catalog_image"></div>
+                <div class="catalog_name"></div>
+            </section>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    fetch('http://localhost:3000/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Received data:', data);
+    // You can now do something with the array (e.g., display it)
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+
+  fetch('http://localhost:3001/data')
+  .then(response => response.json())
+  .then(data => {
+    setTimeout(() => {
+        console.log('Received data:', data);
+    }, 1000)
+    // You can now do something with the array (e.g., display it)
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+</script>
+</html>

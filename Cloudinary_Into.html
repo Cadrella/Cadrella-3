@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Upload Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    #uploadBtn {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #preview {
+      margin-top: 20px;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+    <input type="file" id="imageInput" />
+    <button onclick="uploadImage()">Send to Server</button>
+    <img id="preview" style="max-width: 300px;"/>
+    
+    <script>
+      async function uploadImage() {
+        const fileInput = document.getElementById('imageInput');
+        const file = fileInput.files[0];
+        if (!file) return;
+    
+        const formData = new FormData();
+        formData.append("image", file);
+    
+        const res = await fetch("http://localhost:3000/upload", {
+          method: "POST",
+          body: formData
+        });
+    
+        const data = await res.json();
+        document.getElementById('preview').src = data.url;
+      }
+    </script>
+    
+
+</body>
+</html>
